@@ -20,7 +20,7 @@ function getLabelsAndData(data) {
       acc.years.push(entry.Year);
       acc.temps.push(Number(entry.Glob) + GLOBAL_MEAN_TEMPERATURE);
       acc.east.push(
-        (Number(entry["N.Hemi"]) + GLOBAL_MEAN_TEMPERATURE).toFixed(1)
+        (Number(entry["N.Hemi"]) + GLOBAL_MEAN_TEMPERATURE).toFixed(2)
       );
       acc.west.push(Number(entry["S.Hemi"]) + GLOBAL_MEAN_TEMPERATURE);
       return acc;
@@ -71,8 +71,6 @@ function drawChart(labels, data, east, west) {
               return value + "°";
             },
           },
-          // suggestedMin: 9,
-          // suggestedMax: 15,
         },
       },
     },
